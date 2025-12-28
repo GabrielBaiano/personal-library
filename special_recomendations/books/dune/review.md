@@ -1,4 +1,7 @@
-# Dune by Frank Herbert
+# Dune
+![Genre: Sci-Fi](https://img.shields.io/badge/Sci--Fi-blue)
+
+**Author:** Frank Herbert
 
 **Rating:** ⭐⭐⭐⭐⭐
 **Status:** Finished ✅

@@ -88,6 +88,8 @@
           <img src="/2026/books/fundacao/fundacao_bookcover.jpg" alt="Fundação" width="120">
         </a>
         <br />
+        <img src="https://img.shields.io/badge/Sci--Fi-blue" alt="Sci-Fi Badge">
+        <br />
         <a href="https://openlibrary.org/works/OL106394W/Foundation"><b>Fundação</b></a> <sup>BR</sup>
         <br />
         Status: <b>Reading 📖</b>
@@ -96,6 +98,8 @@
         <a href="https://openlibrary.org/works/OL36691W/The_Family">
             <img src="/2026/books/os_borgias/os_borgias_bookcover.webp" alt="Os Bórgias" width="120">
         </a>
+        <br />
+        <img src="https://img.shields.io/badge/History-orange" alt="History Badge">
         <br />
         <a href="https://openlibrary.org/works/OL36691W/The_Family"><b>Os Bórgias</b></a> <sup>BR</sup>
         <br />
@@ -119,6 +123,8 @@
   <tr>
     <td colspan="2" align="center">
       <em>A complete list of the books I have finished, including my personal ratings and detailed reviews.</em>
+      <br><br>
+      <b>2026 Goal:</b> ░░░░░░░░░░ 0/12
     </td>
   </tr>
   <tr>
@@ -156,6 +162,8 @@
   <tr>
     <td align="center" valign="top">
       <img src="/special_recomendations/books/dune/dune_bookcover.jpg" alt="Dune" width="100">
+      <br>
+      <img src="https://img.shields.io/badge/Sci--Fi-blue" alt="Sci-Fi Badge">
       <br>
       <a href="https://openlibrary.org/isbn/0441172717"><b>Dune</b></a> <sup>EN</sup>and<sup>BR</sup>
       <br><br>
