@@ -9,6 +9,6 @@ A collection of lines that stuck with me.
 > "The mystery of life isn't a problem to solve, but a reality to experience."
 
 > "Um homem deve escolher bem suas batalhas… e suas músicas."
-> <br>— **Gurney Halleck** ![PT-BR](https://img.shields.io/badge/PT--BR-green)
+> <br>— **Gurney Halleck** - PT-BR
 
 ---
