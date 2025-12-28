@@ -147,7 +147,7 @@
 <h2>4. My special recommendations</h2>
 <p>
     Here are the books that I believe are absolute must-reads — the ones that stayed with me long after I finished the last page.
-    <br>
+    <br><br>
     Here, you’ll find more intimate and in-depth reviews, shaped by reflection and, in some cases, multiple rereads. Not every book listed here will resonate with you in the same way it did with me. Some of them live close to my heart because they arrived at the right moment, at the right time in my life — they made perfect sense to me then, even if they might not to you now.
 </p>
 <a id="recommendations"></a>
