@@ -16,6 +16,7 @@
           <li><a href="#reading">What i'm reading ?</a></li>
           <li><a href="#finished">The finished books</a></li>
           <li><a href="#recommendations">My special recommendations</a></li>
+          <li><a href="#piracy">Except... is it piracy?</a></li>
       </ol>
     </td>
   </tr>
@@ -127,7 +128,9 @@
 <br>
 <h2>4. My special recommendations</h2>
 <p>
-    Here are the books that I believe are absolute must-reads. These are the ones that stayed with me long after I finished the last page.
+    Here are the books that I believe are absolute must-reads — the ones that stayed with me long after I finished the last page.
+    <br>
+    Here, you’ll find more intimate and in-depth reviews, shaped by reflection and, in some cases, multiple rereads. Not every book listed here will resonate with you in the same way it did with me. Some of them live close to my heart because they arrived at the right moment, at the right time in my life — they made perfect sense to me then, even if they might not to you now.
 </p>
 <a id="recommendations"></a>
 <table width="100%">
@@ -166,3 +169,23 @@
     </td>
   </tr>
 </table>
+
+<br>
+
+<a id="piracy"></a>
+<h2>5. Except... is it piracy?</h2>
+<p>
+    This is a delicate topic, but one that needs to be addressed.
+    I believe that knowledge and culture should be accessible to everyone. In an ideal world, we would all have the means to support the authors, artists, and creators we love.
+</p>
+<p>
+    However, the reality—especially in countries like Brazil—is that books can be prohibitively expensive compared to the average income.
+    My stance is simple: <b>financial barriers should never stop you from reading.</b>
+</p>
+<p>
+    If you have the financial means, <b>please buy the book</b>. Support the author, the publisher, and the ecosystem that makes these stories possible.
+    But if you cannot afford it right now, don't let that stop you. Read the digital version, borrow it, share it. The most important thing is that the knowledge is transferred, that the story is heard, and that you keep reading.
+</p>
+<p>
+    Someday, when you can, you will buy that special edition to put on your shelf. Until then, read.
+</p>
