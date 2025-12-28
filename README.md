@@ -4,9 +4,14 @@
   <em>This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.</em>
 </p>
 
+<p align="center">
+  <a href="#reading">Reading</a> • <a href="#finished">Finished Books</a>
+</p>
+
 <br>
 
 <div align="center">
+  <a id="reading"></a>
   <table>
     <tr>
       <th colspan="3">Reading</th>
@@ -36,6 +41,7 @@
 
 <br>
 
+<a id="finished"></a>
 <table width="100%">
   <tr>
     <th colspan="2" align="center">Finished books</th>
@@ -46,7 +52,7 @@
   </tr>
   <tr>
     <td align="center" valign="top">
-      <img src="https://covers.openlibrary.org/b/isbn/0441172717-M.jpg" alt="Dune" width="100">
+      <img src="/special_recomendations/books/dune/dune_bookcover.jpg" alt="Dune" width="100">
       <br>
       <a href="https://openlibrary.org/isbn/0441172717"><b>Dune</b></a> <sup>EN</sup>
       <br><br>
@@ -63,7 +69,7 @@
         It's a dense read but rewarding. The journey of Paul Atreides is epic in scale.
       </p>
       <br>
-      <a href="./2026/books/dune/review.md"><b>Read full review ➡</b></a>
+      <a href="./special_recomendations/books/dune/review.md"><b>Read full review ➡</b></a>
     </td>
   </tr>
 </table>
