@@ -13,14 +13,14 @@ If you know a book you think I would love (or even hate, but should read anyway)
 - Tell me the Title, Author, and why you think it's worth reading.
 - No spoilers, please!
 
-## � Better Versions & Translations
+## 📖 Better Versions & Translations
 
 Have a better version of a book file (e.g., a cleaner ePub, a higher quality PDF)? Or maybe you have the book in another language (English, French, etc.) that I haven't added yet?
 - Feel free to **Open a PR** adding the file to the respective book's folder.
 - Please detail what is better or different about this version in the PR description.
 - Help me make this library more accessible!
 
-## �🐛 Typos and Fixes
+## 🐛 Typos and Fixes
 
 English is not my first language, and typos happen.
 - If you find a spelling mistake, a broken link, or a formatting error in the `README.md` or any other file, feel free to open a **Pull Request**.

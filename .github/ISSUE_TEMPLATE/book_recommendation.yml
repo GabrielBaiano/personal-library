@@ -1,0 +1,39 @@
+name: 📚 Book Recommendation
+description: Suggest a book for the library
+title: "[Recommendation]: "
+labels: ["recommendation"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Book Title
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Specific Version / Edition / Language
+      description: Is there a specific translation, checking or edition (e.g., 20th Anniversary) you recommend?
+      placeholder: e.g., "Penguin Classics", "Translation by..." or "Original English"
+    validations:
+      required: false
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why should I read it?
+      description: Tell me why this book is special (High-level, No Spoilers!)
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Link to the book (Amazon, Goodreads, OpenLibrary, etc.)
+    validations:
+      required: false
