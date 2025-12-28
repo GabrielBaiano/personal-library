@@ -4,9 +4,17 @@
   <em>This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.</em>
 </p>
 
-<p align="center">
-  <a href="#reading">Reading</a> • <a href="#finished">Finished Books</a>
-</p>
+<div align="center">
+  <h3>Summary</h3>
+  <ol align="left" style="display: inline-block; text-align: left;">
+    <li>
+      <a href="#reading">Reading</a>
+    </li>
+    <li>
+      <a href="#finished">Finished Books</a>
+    </li>
+  </ol>
+</div>
 
 <br>
 
