@@ -40,17 +40,20 @@
 
 <table width="100%">
   <tr>
-    <td width="25%" align="center" valign="top">
+    <th width="25%" align="center">Books</th>
+    <th align="center">Spoiler-free Reviews</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
       <img src="https://covers.openlibrary.org/b/isbn/0441172717-M.jpg" alt="Dune" width="100">
       <br>
-      <b>Dune</b>
+      <a href="https://openlibrary.org/isbn/0441172717"><b>Dune</b></a> <sup>EN</sup>
       <br><br>
       Status: <b>Finished ✅</b>
       <br>
       Rating: ⭐⭐⭐⭐⭐
     </td>
     <td valign="top">
-      <h3>Spoiler-free Review</h3>
       <p>
         <em>"A beginning is the time for taking the most delicate care that the balances are correct."</em>
         <br><br>
