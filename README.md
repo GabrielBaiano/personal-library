@@ -1,5 +1,10 @@
-# personal-library
-This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.
+<h1 align="center">Personal Library</h1>
+
+<p align="center">
+  <em>This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.</em>
+</p>
+
+<br>
 
 <div align="center">
   <table>
@@ -28,3 +33,33 @@ This is my personal library. Here I share the books I’m currently reading and 
     </tr>
   </table>
 </div>
+
+<br>
+
+<h2 align="center">Reviews</h2>
+
+<table width="100%">
+  <tr>
+    <td width="25%" align="center" valign="top">
+      <img src="https://covers.openlibrary.org/b/isbn/0441172717-M.jpg" alt="Dune" width="100">
+      <br>
+      <b>Dune</b>
+      <br><br>
+      Status: <b>Finished ✅</b>
+      <br>
+      Rating: ⭐⭐⭐⭐⭐
+    </td>
+    <td valign="top">
+      <h3>Spoiler-free Review</h3>
+      <p>
+        <em>"A beginning is the time for taking the most delicate care that the balances are correct."</em>
+        <br><br>
+        Dune is an absolute masterpiece of science fiction. The world-building is incredibly deep, mixing politics, religion, and ecology in a way that feels unmatched. Arrakis feels like a real, breathing place.
+        <br><br>
+        It's a dense read but rewarding. The journey of Paul Atreides is epic in scale.
+      </p>
+      <br>
+      <a href="./2026/books/dune/review.md"><b>Read full review ➡</b></a>
+    </td>
+  </tr>
+</table>
