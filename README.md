@@ -15,7 +15,12 @@
           </li>
           <li><a href="#reading">What i'm reading ?</a></li>
           <li><a href="#finished">The finished books</a></li>
-          <li><a href="#recommendations">My special recommendations</a></li>
+          <li>
+            <a href="#recommendations">My special recommendations</a>
+            <ul>
+                <li><a href="#sentences">Sentences That Never Left</a></li>
+            </ul>
+          </li>
           <li>
             <a href="#piracy">Except... is it piracy?</a>
             <ul>
@@ -184,6 +189,18 @@
     </td>
   </tr>
 </table>
+
+<br>
+
+<a id="sentences"></a>
+<h3>4.1 📜 Sentences That Never Left</h3>
+<p>
+    Some words have the power to stay with us forever. Here, I collect the quotes that resonated the most.
+    <br><br>
+    👉 <a href="./special_recomendations/quotes/QUOTES_EN.md"><b>🇬🇧 English Quotes</b></a>
+    <br>
+    👉 <a href="./special_recomendations/quotes/QUOTES_PT.md"><b>🇧🇷 Frases em Português</b></a>
+</p>
 
 <br>
 
