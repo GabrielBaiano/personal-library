@@ -36,9 +36,10 @@
 
 <br>
 
-<h2 align="center">Reviews</h2>
-
 <table width="100%">
+  <tr>
+    <th colspan="2" align="center">Finished books</th>
+  </tr>
   <tr>
     <th width="25%" align="center">Books</th>
     <th align="center">Spoiler-free Reviews</th>
