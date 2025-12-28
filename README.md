@@ -193,10 +193,8 @@
 <br>
 
 <a id="sentences"></a>
+<h3>4.1 📜 Sentences That Never Left</h3>
 <table width="100%">
-  <tr>
-    <th colspan="2" align="center">4.1 📜 Sentences That Never Left</th>
-  </tr>
   <tr>
     <td width="50%" valign="top">
        <em>"The mystery of life isn't a problem to solve, but a reality to experience."</em>
