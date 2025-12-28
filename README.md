@@ -7,8 +7,14 @@
   <tr>
     <td>
       <ol>
-          <li><a href="#reading">Reading</a></li>
-          <li><a href="#finished">Finished Books</a></li>
+          <li>
+            <a href="#introduction">Introduction</a>
+            <ul>
+                <li><a href="#structure">Structure</a></li>
+            </ul>
+          </li>
+          <li><a href="#reading">What i'm reading ?</a></li>
+          <li><a href="#finished">The finished books</a></li>
       </ol>
     </td>
   </tr>
@@ -31,16 +37,36 @@
 
 <br>
 
-<h2>Introduction</h2>
+<a id="introduction"></a>
+<h2>1. Introduction</h2>
 
 <p>
-  Welcome to my personal library! Reading is a journey, and this repository serves as my travel log. 
-  Here, I document not just the books I finish, but the process of reading them—the ideas they spark, the quotes that resonate, 
-  and the honest reviews of my experience. Whether it's science fiction, history, or philosophy, you'll find it all cataloged here.
+    This project was born as a way to organize my readings, build a consistent reading routine, and create a kind of personal book club — a quiet space where I read regularly, reflect on what I’ve read, discuss ideas, and give each book a final evaluation.
+</p>
+<p>
+    I’ve tried other reading-tracking platforms like Goodreads and Skoob, but they never quite fit my rhythm. Over time, they felt less practical and eventually faded away. I’ve always been drawn to personal blogs — small, intentional corners of the internet where thoughts can exist without pressure, algorithms, or advertising.
+</p>
+<p>
+    This library is my attempt to combine structure and freedom: a place to keep track of what I read, to write things down, and to turn reading into a habit rather than a task. It’s likely that only a few people will ever wander through here — perhaps a couple of friends I share a book or a review with — but that’s more than enough. This space exists first and foremost for reflection, for continuity, and for the quiet joy of reading itself.
+</p>
+
+<a id="structure"></a>
+<h3>1.1 📂 Structure</h3>
+<p>
+    The repository is organized logically to separate readings by period and category:
+    <ul>
+        <li><b>Year Folders (e.g., 2026):</b> Contains the books read during that specific year.</li>
+        <li><b>Special Recommendations:</b> A curated collection of my all-time favorites and must-reads.</li>
+    </ul>
+    Inside each main directory, you will find a <code>books</code> folder where each title gets its own space, containing the review file and book cover.
 </p>
 
 <br>
 
+<h2>2. What i'm reading ?</h2>
+<p>
+   This section is a table with the books i'm currently reading. 
+</p>
 <div align="center">
   <a id="reading"></a>
   <table>
@@ -71,11 +97,20 @@
 </div>
 
 <br>
-
+<h2>3. The finished books</h2>
+<p>
+    This section contains a table of the most recent books I’ve finished.
+    Whenever I complete a book, I add it here. As the list grows, older entries are moved to a more complete archive of finished books by respective year folder.
+</p>
 <a id="finished"></a>
 <table width="100%">
   <tr>
     <th colspan="2" align="center">Finished books</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <em>A complete list of the books I have finished, including my personal ratings and detailed reviews.</em>
+    </td>
   </tr>
   <tr>
     <th width="25%" align="center">Books</th>
