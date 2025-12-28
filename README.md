@@ -1,27 +1,36 @@
-<h1 align="center">Personal Library</h1>
+<h1>Personal Library</h1>
 
-<div align="center">
-  <table width="100%">
-    <tr>
-      <th align="center">Summary</th>
-    </tr>
-    <tr>
-      <td align="center">
-        <ol align="left" style="display: inline-block; text-align: left;">
-            <li><a href="#reading">Reading</a></li>
-            <li><a href="#finished">Finished Books</a></li>
-        </ol>
-      </td>
-    </tr>
-  </table>
+<table align="right" width="200">
+  <tr>
+    <th align="center">Summary</th>
+  </tr>
+  <tr>
+    <td>
+      <ol>
+          <li><a href="#reading">Reading</a></li>
+          <li><a href="#finished">Finished Books</a></li>
+      </ol>
+    </td>
+  </tr>
+</table>
+
+<br>
+<div>
+<p>
+  <em>This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.</em>
+</p>
 </div>
+
+<br clear="all">
 
 <br>
 
-<h2 align="center">Introduction</h2>
+<h2>Introduction</h2>
 
-<p align="center">
-  <em>This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.</em>
+<p>
+  Welcome to my personal library! Reading is a journey, and this repository serves as my travel log. 
+  Here, I document not just the books I finish, but the process of reading them—the ideas they spark, the quotes that resonate, 
+  and the honest reviews of my experience. Whether it's science fiction, history, or philosophy, you'll find it all cataloged here.
 </p>
 
 <br>
