@@ -16,7 +16,13 @@
           <li><a href="#reading">What i'm reading ?</a></li>
           <li><a href="#finished">The finished books</a></li>
           <li><a href="#recommendations">My special recommendations</a></li>
-          <li><a href="#piracy">Except... is it piracy?</a></li>
+          <li>
+            <a href="#piracy">Except... is it piracy?</a>
+            <ul>
+                <li><a href="#odds">Reading Against the Odds</a></li>
+                <li><a href="#access">From Access to Piracy</a></li>
+            </ul>
+          </li>
           <li><a href="#thanks">Special Thanks</a></li>
       </ol>
     </td>
@@ -183,6 +189,7 @@
     This chapter exists to talk honestly about that tension — between loving books and being able to afford them, between supporting creators and wanting knowledge to circulate freely. There are no easy answers here, only context, lived experience, and questions worth asking.
 </p>
 
+<a id="odds"></a>
 <h3>5.1 Reading Against the Odds: A Brazilian Perspective</h3>
 <p>
     Brazil is not the center of the global discussion on reading access, but it is where my experience begins — and it reflects many of the challenges faced elsewhere.
@@ -206,6 +213,7 @@
     This is the reality I faced — and it is the lens through which I approach this discussion. While this subchapter focuses on Brazil, these barriers exist in many parts of the world, shaped by economic, social, cultural, or even religious factors. Different contexts, similar outcomes: access to literature is often limited, and reading is not always freely available to those who wish to engage with it.
 </p>
 
+<a id="access"></a>
 <h3>5.2 From Access to Piracy</h3>
 <p>
     The Brazilian context is not an argument, but a starting point. It illustrates the tension between desire, access, and affordability — a tension that exists worldwide and often leads to a difficult question: when access is blocked by circumstance, what are the ethical ways to satisfy the need to read?
