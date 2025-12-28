@@ -174,18 +174,43 @@
 
 <a id="piracy"></a>
 <h2>5. Except... is it piracy?</h2>
+
 <p>
-    This is a delicate topic, but one that needs to be addressed.
-    I believe that knowledge and culture should be accessible to everyone. In an ideal world, we would all have the means to support the authors, artists, and creators we love.
+    Reading should be a simple act: a book, a reader, and time. Yet, in many parts of the world, reading is shaped not only by curiosity or desire, but by access, money, and circumstance.
 </p>
 <p>
-    However, the reality—especially in countries like Brazil—is that books can be prohibitively expensive compared to the average income.
-    My stance is simple: <b>financial barriers should never stop you from reading.</b>
+    This chapter exists to talk honestly about that tension — between loving books and being able to afford them, between supporting creators and wanting knowledge to circulate freely. There are no easy answers here, only context, lived experience, and questions worth asking.
+</p>
+
+<h3>5.1 Reading Against the Odds: A Brazilian Perspective</h3>
+<p>
+    Brazil is not the center of the global discussion on reading access, but it is where my experience begins — and it reflects many of the challenges faced elsewhere.
 </p>
 <p>
-    If you have the financial means, <b>please buy the book</b>. Support the author, the publisher, and the ecosystem that makes these stories possible.
-    But if you cannot afford it right now, don't let that stop you. Read the digital version, borrow it, share it. The most important thing is that the knowledge is transferred, that the story is heard, and that you keep reading.
+    Books in Brazil are often prohibitively expensive compared to the average income. Reading is treated less as a basic cultural practice and more as a luxury, a collectible, or even a form of elitism. Recent data illustrates this clearly: around 53% of Brazilians did not read a single book in 2024, while only 47% are considered readers, defined as people who read at least part of one book in the last three months. The average number of books read per person per year is just under four, and over the last four years, Brazil has lost roughly 6.7 million readers.
 </p>
 <p>
-    Someday, when you can, you will buy that special edition to put on your shelf. Until then, read.
+    The Bible remains the most widely read book in the country, highlighting how concentrated the reading public is. Even within this small group, economic barriers remain a constant challenge. Access increasingly depends on large digital platforms — online retailers like Amazon, or digital services such as Kindle and Google Play Books.
+</p>
+<p>
+    Physical books present additional obstacles. Many editions prioritize aesthetics over accessibility: hardcover releases, premium paper, special artwork, or collector’s editions — all of which significantly increase prices. Scarcity adds to the problem: niche books often have small print runs, and as supply diminishes, prices rise rapidly. Some titles never reach Brazil at all, or are not translated, further restricting access.
+</p>
+<p>
+    A personal example illustrates this reality: in 2020, I bought my first copy of Dune along with the Sprawl trilogy by William Gibson (Neuromancer and its sequels*) for R$125.12. At the time, Dune alone cost R$48, in a year when the Brazilian minimum wage was R$1,039.00. That means three books represented roughly 12% of a monthly minimum wage. Following the release of films and TV adaptations, prices surged — today, physical copies of Dune often approach or exceed R$100, turning a once-accessible book into a luxury item.
+</p>
+<p>
+    This is the reality I faced — and it is the lens through which I approach this discussion. While this subchapter focuses on Brazil, these barriers exist in many parts of the world, shaped by economic, social, cultural, or even religious factors. Different contexts, similar outcomes: access to literature is often limited, and reading is not always freely available to those who wish to engage with it.
+</p>
+
+<h3>5.2 From Access to Piracy</h3>
+<p>
+    The Brazilian context is not an argument, but a starting point. It illustrates the tension between desire, access, and affordability — a tension that exists worldwide and often leads to a difficult question: when access is blocked by circumstance, what are the ethical ways to satisfy the need to read?
+</p>
+<p>
+    If you have the financial means, buy the book. Support the author, the publisher, and the ecosystem that makes these stories possible. But if you cannot afford it right now, don’t let that stop you. Borrow it. Read a digital copy. Share knowledge. Stories need readers as much as they need shelves.
+</p>
+<p>
+    Someday, when you can, you’ll buy that special edition and place it proudly on your shelf.
+    <br>
+    Until then — read.
 </p>
