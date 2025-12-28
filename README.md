@@ -17,6 +17,7 @@
           <li><a href="#finished">The finished books</a></li>
           <li><a href="#recommendations">My special recommendations</a></li>
           <li><a href="#piracy">Except... is it piracy?</a></li>
+          <li><a href="#thanks">Special Thanks</a></li>
       </ol>
     </td>
   </tr>
@@ -216,4 +217,12 @@
     Someday, when you can, you’ll buy that special edition and place it proudly on your shelf.
     <br>
     Until then — read.
+</p>
+
+<a id="thanks"></a>
+<h2>6. Special Thanks</h2>
+<p>
+    I want to express my deepest gratitude to my family for always encouraging my reading habit and fostering a home where books were valued.
+    <br><br>
+    I also want to thank <a href="https://www.youtube.com/@tatifeltrin"><b>Tatiana Feltrin</b></a>, whose channel is a constant source of inspiration and home to some of the best book recommendations I've found. Her passion for literature has played a huge role in shaping my own library.
 </p>
