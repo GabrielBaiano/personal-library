@@ -1,20 +1,28 @@
 <h1 align="center">Personal Library</h1>
 
+<div align="center">
+  <table width="100%">
+    <tr>
+      <th align="center">Summary</th>
+    </tr>
+    <tr>
+      <td align="center">
+        <ol align="left" style="display: inline-block; text-align: left;">
+            <li><a href="#reading">Reading</a></li>
+            <li><a href="#finished">Finished Books</a></li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+<h2 align="center">Introduction</h2>
+
 <p align="center">
   <em>This is my personal library. Here I share the books I’m currently reading and my thoughts, reflections, and notes about each one.</em>
 </p>
-
-<div align="center">
-  <h3>Summary</h3>
-  <ol align="left" style="display: inline-block; text-align: left;">
-    <li>
-      <a href="#reading">Reading</a>
-    </li>
-    <li>
-      <a href="#finished">Finished Books</a>
-    </li>
-  </ol>
-</div>
 
 <br>
 
