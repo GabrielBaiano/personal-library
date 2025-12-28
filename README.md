@@ -15,6 +15,7 @@
           </li>
           <li><a href="#reading">What i'm reading ?</a></li>
           <li><a href="#finished">The finished books</a></li>
+          <li><a href="#recommendations">My special recommendations</a></li>
       </ol>
     </td>
   </tr>
@@ -117,12 +118,38 @@
     <th align="center">Spoiler-free Reviews</th>
   </tr>
   <tr>
+    <td colspan="2" align="center">
+       <em>No books finished recently.</em>
+    </td>
+  </tr>
+</table>
+
+<br>
+<h2>4. My special recommendations</h2>
+<p>
+    Here are the books that I believe are absolute must-reads. These are the ones that stayed with me long after I finished the last page.
+</p>
+<a id="recommendations"></a>
+<table width="100%">
+  <tr>
+    <th colspan="2" align="center">Special Recommendations</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <em>A curated collection of my all-time favorites.</em>
+    </td>
+  </tr>
+  <tr>
+    <th width="25%" align="center">Books</th>
+    <th align="center">Context</th>
+  </tr>
+  <tr>
     <td align="center" valign="top">
       <img src="/special_recomendations/books/dune/dune_bookcover.jpg" alt="Dune" width="100">
       <br>
-      <a href="https://openlibrary.org/isbn/0441172717"><b>Dune</b></a> <sup>EN</sup>
+      <a href="https://openlibrary.org/isbn/0441172717"><b>Dune</b></a> <sup>EN</sup>and<sup>BR</sup>
       <br><br>
-      Status: <b>Finished ✅</b>
+      Status: <b>Highly Recommended 🏆</b>
       <br>
       Rating: ⭐⭐⭐⭐⭐
     </td>
