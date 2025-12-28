@@ -17,11 +17,12 @@
 <br>
 <div>
 <p>
-  This is my personal library. Here I share the books I’m currently reading, along with my thoughts, reflections, and notes on each one.
-  I will make the books I read available here. You can download them to read for free — I’ll discuss this further below regarding piracy — and form your own conclusions.
-  
-  <b>Disclaimer:</b> As I’m Brazilian, Portuguese is my primary language, which means most of the books I read are in Portuguese. However, I also read many books in English.
-  For this reason, I’ll always try to make an English version of each book available, regardless of the language I read it in, so more people can enjoy it.
+    This is my personal library.
+    Here, I share the books I’m currently reading, along with my thoughts, reflections, and notes on each one.
+    I also make the books I read available here, so you can download them for free, read at your own pace, and form your own conclusions — a topic I’ll discuss further below regarding piracy.
+
+    <b>Disclaimer:</b> As I’m Brazilian, Portuguese is my primary language, which means most of the books I read are in Portuguese. However, I also read many books in English.
+    For this reason, I’ll always try to make an English version of each book available, regardless of the language I read it in, so more people can enjoy it.
 </p>
 </div>
 
