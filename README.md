@@ -197,16 +197,23 @@
 <p>
    Some sentences don’t stay on the page.
 <br>
+<br>
 They follow us long after the book is closed, resurfacing at unexpected moments — in silence, in doubt, in clarity. A single line can carry more weight than an entire chapter. Sometimes it arrives at the exact moment we need it. Other times, we only understand its meaning years later.
+<br>
 <br>
 Certain phrases mark us not because they are universally profound, but because they meet us where we are. They resonate with something unspoken, name a feeling we didn’t know how to articulate, or quietly shift the way we see ourselves or the world.
 <br>
+<br>
 These words become companions. We return to them, underline them, rewrite them in notebooks, carry them with us. They remind us of who we were when we first read them — and how far we’ve come since.
+<br>
 <br>
 This section exists to hold those fragments. Not as definitive truths, but as moments of recognition. Words that stayed. Words that shaped me.
 <br>
+<br>
 See some of my favorites below:
 </p>
+<br>
+<div align="center">
 <table width="100%">
   <tr>
     <td valign="top">
@@ -223,15 +230,15 @@ See some of my favorites below:
     </td>
   </tr>
 </table>
-
+</div>
 <br>
 
-<p align="center">
+<p>
   Some words have the power to stay with us forever. Here, I collect the quotes that resonated the most.
   <br><br>
-  👉 <a href="./special_recomendations/quotes/QUOTES_EN.md"><b>🇬🇧 English Quotes</b></a>
+   <a href="./special_recomendations/quotes/QUOTES_EN.md"><b>🇬🇧 English Quotes</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  👉 <a href="./special_recomendations/quotes/QUOTES_PT.md"><b>🇧🇷 Frases em Português</b></a>
+   <a href="./special_recomendations/quotes/QUOTES_PT.md"><b>🇧🇷 Frases em Português</b></a>
 </p>
 
 <br>
