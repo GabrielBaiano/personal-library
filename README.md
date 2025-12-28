@@ -241,4 +241,6 @@
     I want to express my deepest gratitude to my family for always encouraging my reading habit and fostering a home where books were valued.
     <br><br>
     I also want to thank <a href="https://www.youtube.com/@tatifeltrin"><b>Tatiana Feltrin</b></a>, whose channel is a constant source of inspiration and home to some of the best book recommendations I've found. Her passion for literature has played a huge role in shaping my own library.
+    <br><br>
+    A small shout-out as well to <a href="https://www.youtube.com/@ParkerNotes/featured">Parker Notes</a> and <a href="https://www.youtube.com/@ManCarryingThing">Man Carrying Thing</a> for their unique and entertaining perspectives on reading and writing.
 </p>
