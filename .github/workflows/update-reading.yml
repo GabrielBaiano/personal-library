@@ -1,0 +1,59 @@
+name: Update Reading Section
+
+on:
+  push:
+    paths:
+      - "README.md"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Personal Library
+        uses: actions/checkout@v4
+        with:
+          path: personal-library
+
+      - name: Checkout Profile Repo
+        uses: actions/checkout@v4
+        with:
+          repository: GabrielBaiano/GabrielBaiano
+          path: GabrielBaiano
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Update Script
+        run: |
+          cd personal-library
+          node scripts/update-reading.js
+
+      - name: Commit and Push Profile Updates
+        run: |
+          cd GabrielBaiano
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          if [[ -n $(git status -s) ]]; then
+            git add README.md
+            git commit -m "chore: update reading books"
+            git push
+          else
+            echo "No changes to commit in Profile"
+          fi
+
+      - name: Commit and Push Library Updates (if any)
+        run: |
+          cd personal-library
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          if [[ -n $(git status -s) ]]; then
+            git add README.md
+            git commit -m "chore: sync reading markers"
+            git push
+          else
+            echo "No changes to commit in Library"
+          fi
