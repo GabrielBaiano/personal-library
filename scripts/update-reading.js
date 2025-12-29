@@ -66,6 +66,17 @@ function updateReadme(targetPath, newContent) {
 updateReadme(personalReadmePath, booksBlock);
 
 // 2. Sync Profile README
-// Injects the exact same HTML block into the profile.
-// The profile README should be configured to accept this layout (e.g., nested table).
-updateReadme(profileReadmePath, booksBlock);
+// Convert horizontal cells (<td>...</td>...<td>...</td>) into vertical rows (<tr><td>...</td></tr>...)
+let profileContent = booksBlock;
+profileContent = profileContent.replace(/^\s*<tr>/, "").replace(/<\/tr>\s*$/, "");
+profileContent = profileContent.replace(/<\/td>\s*<td/g, "</td></tr>\n<tr><td");
+profileContent = profileContent.trim();
+
+if (!profileContent.startsWith("<tr>")) {
+    profileContent = "<tr>" + profileContent;
+}
+if (!profileContent.endsWith("</tr>")) {
+    profileContent = profileContent + "</tr>";
+}
+
+updateReadme(profileReadmePath, profileContent);
