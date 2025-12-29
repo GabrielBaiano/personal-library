@@ -39,11 +39,12 @@
 <p>
     This is my personal library.
     Here, I share the books I’m currently reading, along with my thoughts, reflections, and notes on each one.
-    I also make the books I read available here, so you can download them for free, read at your own pace, and form your own conclusions — a topic I’ll discuss further below regarding piracy.
+    <br>
+    <br>
+    <b>Note:</b> I do not make book files available in this repository unless they are classics that have already entered the public domain. This repository is focused on my personal reading journey, reviews, and notes.
     <br>
     <br>
     <b>Disclaimer:</b> As I’m Brazilian, Portuguese is my primary language, which means most of the books I read are in Portuguese. However, I also read many books in English.
-    For this reason, I’ll always try to make an English version of each book available, regardless of the language I read it in, so more people can enjoy it.
 </p>
 </div>
 
@@ -90,7 +91,7 @@
     <tr>
       <td align="center">
         <a href="https://openlibrary.org/works/OL106394W/Foundation">
-          <img src="/2026/books/fundacao/fundacao_bookcover.jpg" alt="Fundação" width="120">
+          <img src="/2026/fundacao/fundacao_bookcover.jpg" alt="Fundação" width="120">
         </a>
         <br />
         <img src="https://img.shields.io/badge/Sci--Fi-blue" alt="Sci-Fi Badge">
@@ -101,7 +102,7 @@
       </td>
       <td align="center">
         <a href="https://openlibrary.org/works/OL36691W/The_Family">
-            <img src="/2026/books/os_borgias/os_borgias_bookcover.webp" alt="Os Bórgias" width="120">
+            <img src="/2026/os_borgias/os_borgias_bookcover.webp" alt="Os Bórgias" width="120">
         </a>
         <br />
         <img src="https://img.shields.io/badge/History-orange" alt="History Badge">
@@ -166,7 +167,7 @@
   </tr>
   <tr>
     <td align="center" valign="top">
-      <img src="/special_recomendations/books/dune/dune_bookcover.jpg" alt="Dune" width="100">
+      <img src="/special_recomendations/dune/dune_bookcover.jpg" alt="Dune" width="100">
       <br>
       <img src="https://img.shields.io/badge/Sci--Fi-blue" alt="Sci-Fi Badge">
       <br>
@@ -185,7 +186,7 @@
         It's a dense read but rewarding. The journey of Paul Atreides is epic in scale.
       </p>
       <br>
-      <a href="./special_recomendations/books/dune/review.md"><b>Read full review ➡</b></a>
+      <a href="./special_recomendations/dune/review.md"><b>Read full review ➡</b></a>
     </td>
   </tr>
 </table>
