@@ -13,12 +13,21 @@ If you know a book you think I would love (or even hate, but should read anyway)
 - Tell me the Title, Author, and why you think it's worth reading.
 - No spoilers, please!
 
-## 📖 Better Versions & Translations
+## 📂 Files & Copyright (Strict Rules)
 
-Have a better version of a book file (e.g., a cleaner ePub, a higher quality PDF)? Or maybe you have the book in another language (English, French, etc.) that I haven't added yet?
-- Feel free to **Open a PR** adding the file to the respective book's folder.
-- Please detail what is better or different about this version in the PR description.
-- Help me make this library more accessible!
+I **do not** accept copyrighted material in this repository.
+- **Do NOT** open PRs attaching book files unless the book is explicitly **Public Domain** (e.g., classics like Tolstoy, Machado de Assis, Austen).
+- If you are submitting a Public Domain book:
+    - You **must explain** in the PR/Issue description **why** it is copyright-free.
+    - Accepted formats: `.pdf`, `.epub`, `.mobi`, `.docx`, `.doc`.
+    - **No passwords**: Files must be accessible without passwords.
+    - **No bizarre formats**: Stick to the standards listed above.
+
+### "I have a link for a book!"
+If you found an *official* or *legal* source for a book (e.g., Project Gutenberg, Internet Archive, or an Open Access publication) but don't know how to use Git:
+- Open an **Issue** with the tag `book-link`.
+- Paste the **Direct Link** to the official source.
+- **Avoid links to**: Google Drive, Mega, MediaFire, or any file-sharing service that requires passwords or hosts pirated content. These will be ignored.
 
 ## 🐛 Typos and Fixes
 

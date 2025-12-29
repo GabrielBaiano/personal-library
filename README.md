@@ -41,10 +41,7 @@
     Here, I share the books I’m currently reading, along with my thoughts, reflections, and notes on each one.
     <br>
     <br>
-    <b>Note:</b> I do not make book files available in this repository unless they are classics that have already entered the public domain. This repository is focused on my personal reading journey, reviews, and notes.
-    <br>
-    <br>
-    <b>Disclaimer:</b> As I’m Brazilian, Portuguese is my primary language, which means most of the books I read are in Portuguese. However, I also read many books in English.
+    <b>About this repository:</b> Please note that <b>I do not host copyrighted book files</b> here. This repository is dedicated solely to my reading journey. Also, as I’m Brazilian, Portuguese is my primary language, so most reviews will be in Portuguese, though I read and review in English as well.
 </p>
 </div>
 
