@@ -11,12 +11,27 @@ Here is how you can contribute:
 If you know a book you think I would love (or even hate, but should read anyway), let me know!
 - Open an **Issue** with the tag `recommendation`.
 - Tell me the Title, Author, and why you think it's worth reading.
+- Tell me the Title, Author, and why you think it's worth reading.
 - No spoilers, please!
+
+## 🌍 Translating the Library
+
+Since I often read books in Portuguese (my native language), I might not have the English (or French, Spanish, etc.) version of a **Public Domain** book available.
+- If you have a legitimate, copyright-free version of a classic in another language that I've already read/reviewed, **please contribute!**
+- This helps make the library accessible to more people around the world.
 
 ## 📂 Files & Copyright (Strict Rules)
 
 I **do not** accept copyrighted material in this repository.
 - **Do NOT** open PRs attaching book files unless the book is explicitly **Public Domain** (e.g., classics like Tolstoy, Machado de Assis, Austen).
+
+### 🌐 Trusted Sites to Check Copyright
+Not sure if a book is Public Domain? Check these trusted sources:
+- **[Domínio Público (Brasil)](http://www.dominiopublico.gov.br)**
+- **[Project Gutenberg (International)](https://www.gutenberg.org)**
+- **[Internet Archive](https://archive.org)**
+- **[Wikisource](https://wikisource.org)**
+
 - If you are submitting a Public Domain book:
     - You **must explain** in the PR/Issue description **why** it is copyright-free.
     - Accepted formats: `.pdf`, `.epub`, `.mobi`, `.docx`, `.doc`.
