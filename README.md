@@ -43,7 +43,7 @@
     <br>
     <b>About this repository:</b> I do make book files available here, but <b>only</b> if they are free of copyright (Public Domain). This repository is dedicated solely to my reading journey.
     <br>
-    <b>Language Note:</b> I'm Brazilian and read mostly in Portuguese, but **reviews are in English** (reflecting the PT-BR edition). For Public Domain books, I upload English versions when possible. Missing a language? Check <a href="CONTRIBUTING.md">how to contribute</a>.
+    <b>Language Note:</b> I read in various languages (Portuguese, French, English), so my reviews—**which are always in English**—reflect the specific nuances of the edition I read. For Public Domain books, I share the text I read, but I will also aim to include an English version for broader accessibility. Missing a translation? Check <a href="CONTRIBUTING.md">how to contribute</a>.
 </p>
 </div>
 
