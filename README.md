@@ -72,14 +72,14 @@
         <li><b>Year Folders (e.g., 2026):</b> Contains the books read during that specific year.</li>
         <li><b>Special Recommendations:</b> A curated collection of my all-time favorites and must-reads.</li>
     </ul>
-    Inside each main directory, you will find a <code>books</code> folder where each title gets its own space, containing the review file and book cover.
+    Inside each main directory, you will find a <code>books</code> folder where each title gets its own space, containing the review file, book cover and the book.
 </p>
 
 <br>
 
 <h2>2. What i'm reading ?</h2>
 <p>
-   This section is a table with the books i'm currently reading. 
+   This section is a table with the books i'm currently reading, you can see the exact books on my github profile.
 </p>
 <div align="center">
   <a id="reading"></a>
