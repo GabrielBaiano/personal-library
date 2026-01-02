@@ -1,38 +1,91 @@
-name: Update Reading Section
-
+name: Update Reading & Sync Portfolio
 on:
   push:
     paths:
       - "README.md"
   workflow_dispatch:
-
 jobs:
-  build:
+  sync-content:
     runs-on: ubuntu-latest
     steps:
+      # 1. Checkout All 3 Repositories
       - name: Checkout Personal Library
         uses: actions/checkout@v4
         with:
           path: personal-library
-
       - name: Checkout Profile Repo
         uses: actions/checkout@v4
         with:
           repository: GabrielBaiano/GabrielBaiano
           path: GabrielBaiano
           token: ${{ secrets.PAT_TOKEN }}
-
+      - name: Checkout Portfolio Repo
+        uses: actions/checkout@v4
+        with:
+          repository: GabrielBaiano/A-new-type-portifolio
+          path: portfolio
+          token: ${{ secrets.PAT_TOKEN }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Run Update Script
+      # 2. Run your existing Profile Update script
+      - name: Run Profile Update Script
         run: |
           cd personal-library
-          node scripts/update-reading.js
-
-      - name: Commit and Push Profile Updates
+          if [ -f "scripts/update-reading.js" ]; then
+            node scripts/update-reading.js
+          else
+            echo "Warning: scripts/update-reading.js not found, skipping profile profile update."
+          fi
+      # 3. Parse README and Update Portfolio JSON (Serverless Script)
+      - name: Parse and Update Reviews JSON
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            // Paths
+            const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'personal-library/README.md');
+            const targetJsonPath = path.join(process.env.GITHUB_WORKSPACE, 'portfolio/data/reviews.json');
+            // Read README
+            if (!fs.existsSync(readmePath)) {
+                console.log('README not found');
+                return;
+            }
+            const content = fs.readFileSync(readmePath, 'utf8');
+            // Parse Books utilizing your specific Table Format
+            // Regex matches: Image, Span(Tag/Author), Link(Title), Status
+            const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[\s\S]*?<span[^>]*>([^<]+)<\/span>[\s\S]*?<a[^>]*>([^<]+)<\/a>[\s\S]*?Status: <strong>([^<]+)<\/strong>[\s\S]*?<\/td>/g;
+            
+            const books = [];
+            let match;
+            while ((match = regex.exec(content)) !== null) {
+                books.push({
+                    image: match[1],
+                    tag: match[2],
+                    title: match[3],
+                    status: match[4],
+                    // Generate ID from title
+                    id: match[3].toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-'),
+                    link: 'https://github.com/GabrielBaiano/personal-library', // Link back to repo
+                    date: new Date().toISOString().split('T')[0] // Default to today as we don't have date in table yet
+                });
+            }
+            console.log(`Parsed ${books.length} books.`);
+            // Load existing JSON to preserve other fields if needed
+            let currentData = { shelves: [], reviews: [] };
+            if (fs.existsSync(targetJsonPath)) {
+                try {
+                    currentData = JSON.parse(fs.readFileSync(targetJsonPath, 'utf8'));
+                } catch (e) { console.log('Error reading existing JSON, starting fresh'); }
+            }
+            // Update reviews field
+            currentData.reviews = books;
+            // Write back
+            fs.writeFileSync(targetJsonPath, JSON.stringify(currentData, null, 2));
+      # 4. Commit Changes - Profile
+      - name: Commit Profile Updates
         run: |
           cd GabrielBaiano
           git config user.name "github-actions"
@@ -44,8 +97,21 @@ jobs:
           else
             echo "No changes to commit in Profile"
           fi
-
-      - name: Commit and Push Library Updates (if any)
+      # 5. Commit Changes - Portfolio (The new part!)
+      - name: Commit Portfolio Updates
+        run: |
+          cd portfolio
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/reviews.json
+          if [[ -n $(git status -s) ]]; then
+            git commit -m "feat(content): Sync books from personal-library"
+            git push
+          else
+            echo "No changes to commit in Portfolio"
+          fi
+      # 6. Commit Changes - Library (Sync markers)
+      - name: Commit Library Updates
         run: |
           cd personal-library
           git config user.name "github-actions"
