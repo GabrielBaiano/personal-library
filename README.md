@@ -112,17 +112,6 @@
         <br />
         Status: <b>Reading 📖</b>
       </td>
-      <td align="center">
-        <a href="https://openlibrary.org/works/OL21639W/Count_Zero">
-            <img src="https://m.media-amazon.com/images/I/91EoktiGQ0L._UF1000,1000_QL80_.jpg" alt="Count Zero" width="120">
-        </a>
-        <br />
-        <img src="https://img.shields.io/badge/Sci--Fi-blue" alt="Sci-Fi Badge">
-        <br />
-        <a href="https://openlibrary.org/works/OL21639W/Count_Zero"><b>Count Zero</b></a> <sup>BR</sup>
-        <br />
-        Status: <b>Reading 📖</b>
-      </td>
     </tr>
 <!-- READING_END -->
   </table>
