@@ -23,7 +23,7 @@ jobs:
           path: portfolio
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Parse Everything
+      - name: Parse Everything (Fixed Accents & Folder Scan)
         uses: actions/github-script@v7
         with:
           script: |
@@ -34,69 +34,69 @@ jobs:
             const readmePath = path.join(libraryPath, 'README.md');
             const targetJsonPath = path.join(process.env.GITHUB_WORKSPACE, 'portfolio/data/reviews.json');
 
-            const books = new Map(); // Usar Map para evitar duplicados
+            const books = new Map();
 
-            // --- 1. PARSE DO README (Livros no Status Atual) ---
+            // 1. Pega os livros do README (Current Reading)
             if (fs.existsSync(readmePath)) {
                 const content = fs.readFileSync(readmePath, 'utf8');
                 const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[^>]*width="120"[\s\S]*?<a[^>]*><b>([^<]+)<\/b><\/a>[\s\S]*?Status: <b>([^<]+)<\/b>/g;
-                
                 let match;
                 while ((match = regex.exec(content)) !== null) {
                     const title = match[2].trim();
                     const status = match[3].includes('Reading') ? 'Reading' : 'Finished';
-                    const folderName = title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+                    const id = title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
-                    books.set(folderName, {
+                    books.set(id, {
                         image: match[1],
                         title: title,
                         status: status,
-                        id: folderName.replace(/_/g, '-'),
+                        id: id,
                         link: 'https://github.com/GabrielBaiano/personal-library',
                         date: new Date().toISOString().split('T')[0]
                     });
                 }
             }
 
-            // --- 2. VARREDURA DE PASTAS (Especial Recomendations & Reviews) ---
-            const scanFolders = ['2026', '2025', 'special_recomendações'];
-            scanFolders.forEach(dirName => {
-                const dirPath = path.join(libraryPath, dirName);
-                if (!fs.existsSync(dirPath)) return;
+            // 2. Procura por arquivos Markdown em todas as pastas (Duna, etc)
+            const allItems = fs.readdirSync(libraryPath);
+            const categories = allItems.filter(f => /^\d{4}$/.test(f) || f.toLowerCase().includes('special'));
 
-                const items = fs.readdirSync(dirPath);
-                items.forEach(item => {
-                    const itemPath = path.join(dirPath, item);
-                    if (fs.statSync(itemPath).isDirectory()) {
-                        const files = fs.readdirSync(itemPath);
+            categories.forEach(cat => {
+                const catPath = path.join(libraryPath, cat);
+                if (!fs.statSync(catPath).isDirectory()) return;
+
+                const bookFolders = fs.readdirSync(catPath);
+                bookFolders.forEach(folder => {
+                    const bookPath = path.join(catPath, folder);
+                    if (fs.statSync(bookPath).isDirectory()) {
+                        const files = fs.readdirSync(bookPath);
                         const mdFile = files.find(f => f.endsWith('.md'));
                         
                         if (mdFile) {
-                            const content = fs.readFileSync(path.join(itemPath, mdFile), 'utf8');
-                            const bookKey = item.toLowerCase();
+                            const mdContent = fs.readFileSync(path.join(bookPath, mdFile), 'utf8');
+                            const id = folder.toLowerCase().replace(/_/g, '-');
                             
-                            // Tenta pegar título e imagem do MD se não tiver no README
-                            let existing = books.get(bookKey) || {
-                                id: item.replace(/_/g, '-'),
-                                title: item.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                            let bookData = books.get(id) || {
+                                id: id,
+                                title: folder.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
                                 status: 'Finished',
-                                image: 'https://via.placeholder.com/300x450?text=' + item,
+                                image: 'https://via.placeholder.com/300x450?text=' + folder,
+                                link: 'https://github.com/GabrielBaiano/personal-library',
                                 date: new Date().toISOString().split('T')[0]
                             };
 
-                            existing.content = content;
-                            if (dirName.includes('special')) existing.status = 'Finished'; // Força status pra especiais
+                            bookData.content = mdContent;
+                            if (cat.toLowerCase().includes('special')) bookData.status = 'Finished';
                             
-                            books.set(bookKey, existing);
+                            books.set(id, bookData);
+                            console.log('✅ Livro encontrado na pasta:', folder);
                         }
                     }
                 });
             });
 
-            // --- 3. SALVAR ---
-            let currentData = { shelves: [], reviews: [] };
-            currentData.reviews = Array.from(books.values());
-            fs.writeFileSync(targetJsonPath, JSON.stringify(currentData, null, 2));
+            const finalData = { shelves: [], reviews: Array.from(books.values()) };
+            fs.writeFileSync(targetJsonPath, JSON.stringify(finalData, null, 2));
 
       - name: Commit
         run: |
@@ -105,6 +105,6 @@ jobs:
           git config user.email "actions@github.com"
           git add data/reviews.json
           if [[ -n $(git status -s) ]]; then
-            git commit -m "feat(content): Sync everything (README + Folders)"
+            git commit -m "feat(content): sync dynamic reviews and special recommendations"
             git push
           fi
