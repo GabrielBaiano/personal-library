@@ -1,10 +1,12 @@
 name: Update Reading & Sync Portfolio
+
 on:
   push:
     paths:
       - "README.md"
-      - "**/*.md" # Also trigger when you update a review file
+      - "**/*.md"
   workflow_dispatch:
+
 jobs:
   sync-content:
     runs-on: ubuntu-latest
@@ -14,80 +16,95 @@ jobs:
         with:
           path: personal-library
           
-      - name: Checkout Portfolio Repo
+      - name: Checkout Portfolio
         uses: actions/checkout@v4
         with:
           repository: GabrielBaiano/A-new-type-portifolio
           path: portfolio
           token: ${{ secrets.PAT_TOKEN }}
-      - name: Parse and Update Portfolio
+
+      - name: Parse Everything
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
+
             const libraryPath = path.join(process.env.GITHUB_WORKSPACE, 'personal-library');
             const readmePath = path.join(libraryPath, 'README.md');
             const targetJsonPath = path.join(process.env.GITHUB_WORKSPACE, 'portfolio/data/reviews.json');
-            if (!fs.existsSync(readmePath)) return;
-            const content = fs.readFileSync(readmePath, 'utf8');
-            const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[^>]*width="120"[\s\S]*?<a[^>]*><b>([^<]+)<\/b><\/a>[\s\S]*?Status: <b>([^<]+)<\/b>/g;
-            
-            const books = [];
-            let match;
-            while ((match = regex.exec(content)) !== null) {
-                const title = match[2].trim();
-                const rawStatus = match[3];
-                const cleanStatus = rawStatus.includes('Reading') ? 'Reading' : 'Finished';
+
+            const books = new Map(); // Usar Map para evitar duplicados
+
+            // --- 1. PARSE DO README (Livros no Status Atual) ---
+            if (fs.existsSync(readmePath)) {
+                const content = fs.readFileSync(readmePath, 'utf8');
+                const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[^>]*width="120"[\s\S]*?<a[^>]*><b>([^<]+)<\/b><\/a>[\s\S]*?Status: <b>([^<]+)<\/b>/g;
                 
-                // Normalizing title for folder search (e.g. "Os Bórgias" -> "os_borgias")
-                const folderName = title.toLowerCase()
-                    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
-                    .replace(/\s+/g, '_')
-                    .replace(/[^a-z0-9_]/g, '');
-                let reviewContent = null;
-                
-                if (cleanStatus === 'Finished') {
-                    // Search in 2026/, 2025/, special_recomendações/
-                    const possibleDirs = ['2026', '2025', 'special_recomendações', 'special_recomendações/recommendations'];
-                    for (const dir of possibleDirs) {
-                        const bookDir = path.join(libraryPath, dir, folderName);
-                        if (fs.existsSync(bookDir)) {
-                            const files = fs.readdirSync(bookDir);
-                            const mdFile = files.find(f => f.endsWith('.md'));
-                            if (mdFile) {
-                                reviewContent = fs.readFileSync(path.join(bookDir, mdFile), 'utf8');
-                                break;
-                            }
+                let match;
+                while ((match = regex.exec(content)) !== null) {
+                    const title = match[2].trim();
+                    const status = match[3].includes('Reading') ? 'Reading' : 'Finished';
+                    const folderName = title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+
+                    books.set(folderName, {
+                        image: match[1],
+                        title: title,
+                        status: status,
+                        id: folderName.replace(/_/g, '-'),
+                        link: 'https://github.com/GabrielBaiano/personal-library',
+                        date: new Date().toISOString().split('T')[0]
+                    });
+                }
+            }
+
+            // --- 2. VARREDURA DE PASTAS (Especial Recomendations & Reviews) ---
+            const scanFolders = ['2026', '2025', 'special_recomendações'];
+            scanFolders.forEach(dirName => {
+                const dirPath = path.join(libraryPath, dirName);
+                if (!fs.existsSync(dirPath)) return;
+
+                const items = fs.readdirSync(dirPath);
+                items.forEach(item => {
+                    const itemPath = path.join(dirPath, item);
+                    if (fs.statSync(itemPath).isDirectory()) {
+                        const files = fs.readdirSync(itemPath);
+                        const mdFile = files.find(f => f.endsWith('.md'));
+                        
+                        if (mdFile) {
+                            const content = fs.readFileSync(path.join(itemPath, mdFile), 'utf8');
+                            const bookKey = item.toLowerCase();
+                            
+                            // Tenta pegar título e imagem do MD se não tiver no README
+                            let existing = books.get(bookKey) || {
+                                id: item.replace(/_/g, '-'),
+                                title: item.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                                status: 'Finished',
+                                image: 'https://via.placeholder.com/300x450?text=' + item,
+                                date: new Date().toISOString().split('T')[0]
+                            };
+
+                            existing.content = content;
+                            if (dirName.includes('special')) existing.status = 'Finished'; // Força status pra especiais
+                            
+                            books.set(bookKey, existing);
                         }
                     }
-                }
-                books.push({
-                    image: match[1],
-                    title: title,
-                    status: cleanStatus,
-                    content: reviewContent,
-                    tag: 'Book',
-                    id: folderName.replace(/_/g, '-'),
-                    link: 'https://github.com/GabrielBaiano/personal-library',
-                    date: new Date().toISOString().split('T')[0]
                 });
-            }
+            });
+
+            // --- 3. SALVAR ---
             let currentData = { shelves: [], reviews: [] };
-             if (fs.existsSync(targetJsonPath)) {
-                try {
-                    currentData = JSON.parse(fs.readFileSync(targetJsonPath, 'utf8'));
-                } catch (e) {}
-            }
-            currentData.reviews = books;
+            currentData.reviews = Array.from(books.values());
             fs.writeFileSync(targetJsonPath, JSON.stringify(currentData, null, 2));
-      - name: Commit Change
+
+      - name: Commit
         run: |
           cd portfolio
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/reviews.json
           if [[ -n $(git status -s) ]]; then
-            git commit -m "feat(content): Sync books and detailed reviews"
+            git commit -m "feat(content): Sync everything (README + Folders)"
             git push
           fi
