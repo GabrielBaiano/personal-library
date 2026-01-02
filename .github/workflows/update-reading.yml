@@ -1,20 +1,4 @@
-name: Update Reading & Sync Portfolio
-on:
-  push:
-    paths:
-      - "README.md"
-  workflow_dispatch:
-jobs:
-  sync-content:
-    runs-on: ubuntu-latest
-    steps:
-      # 1. Checkout All 3 Repositories
-      - name: Checkout Personal Library
-        uses: actions/checkout@v4
-        with:
-          path: personal-library
-      - name: Checkout Profile Repo
-        uses: actions/checkout@v4
+
         with:
           repository: GabrielBaiano/GabrielBaiano
           path: GabrielBaiano
@@ -54,50 +38,37 @@ jobs:
                 return;
             }
             const content = fs.readFileSync(readmePath, 'utf8');
-            // Parse Books utilizing your specific Table Format
-            // Regex matches: Image, Span(Tag/Author), Link(Title), Status
-            const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[\s\S]*?<span[^>]*>([^<]+)<\/span>[\s\S]*?<a[^>]*>([^<]+)<\/a>[\s\S]*?Status: <strong>([^<]+)<\/strong>[\s\S]*?<\/td>/g;
+            // Regex Updated for your specific HTML Format:
+            // Matches: <img ... width="120"> ... <b>Title</b> ... Status: <b>Status</b>
+            const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[^>]*width="120"[\s\S]*?<a[^>]*><b>([^<]+)<\/b><\/a>[\s\S]*?Status: <b>([^<]+)<\/b>/g;
             
             const books = [];
             let match;
             while ((match = regex.exec(content)) !== null) {
+                const rawStatus = match[3]; // e.g., "Reading 📖"
+                const cleanStatus = rawStatus.includes('Reading') ? 'Reading' : 'Finished';
                 books.push({
                     image: match[1],
-                    tag: match[2],
-                    title: match[3],
-                    status: match[4],
+                    title: match[2],
+                    status: cleanStatus,
+                    tag: 'Book',
                     // Generate ID from title
-                    id: match[3].toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-'),
-                    link: 'https://github.com/GabrielBaiano/personal-library', // Link back to repo
-                    date: new Date().toISOString().split('T')[0] // Default to today as we don't have date in table yet
+                    id: match[2].toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-'),
+                    link: 'https://github.com/GabrielBaiano/personal-library',
+                    date: new Date().toISOString().split('T')[0]
                 });
             }
             console.log(`Parsed ${books.length} books.`);
-            // Load existing JSON to preserve other fields if needed
+            // Update reviews field
             let currentData = { shelves: [], reviews: [] };
-            if (fs.existsSync(targetJsonPath)) {
+             if (fs.existsSync(targetJsonPath)) {
                 try {
                     currentData = JSON.parse(fs.readFileSync(targetJsonPath, 'utf8'));
                 } catch (e) { console.log('Error reading existing JSON, starting fresh'); }
             }
-            // Update reviews field
             currentData.reviews = books;
-            // Write back
             fs.writeFileSync(targetJsonPath, JSON.stringify(currentData, null, 2));
-      # 4. Commit Changes - Profile
-      - name: Commit Profile Updates
-        run: |
-          cd GabrielBaiano
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          if [[ -n $(git status -s) ]]; then
-            git add README.md
-            git commit -m "chore: update reading books"
-            git push
-          else
-            echo "No changes to commit in Profile"
-          fi
-      # 5. Commit Changes - Portfolio (The new part!)
+      # 4. Commit Changes - Portfolio (Only if changed)
       - name: Commit Portfolio Updates
         run: |
           cd portfolio
@@ -110,7 +81,19 @@ jobs:
           else
             echo "No changes to commit in Portfolio"
           fi
-      # 6. Commit Changes - Library (Sync markers)
+      # 5. Commit Changes - Profile & Library (Existing Flow)
+      - name: Commit Profile Updates
+        run: |
+          cd GabrielBaiano
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          if [[ -n $(git status -s) ]]; then
+            git add README.md
+            git commit -m "chore: update reading books"
+            git push
+          else
+            echo "No changes to commit in Profile"
+          fi
       - name: Commit Library Updates
         run: |
           cd personal-library
