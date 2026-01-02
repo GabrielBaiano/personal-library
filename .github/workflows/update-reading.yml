@@ -1,65 +1,86 @@
+name: Update Reading & Sync Portfolio
 
+on:
+  push:
+    paths:
+      - "README.md"
+  workflow_dispatch:
+
+jobs:
+  sync-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Personal Library
+        uses: actions/checkout@v4
+        with:
+          path: personal-library
+
+      - name: Checkout Profile Repo
+        uses: actions/checkout@v4
         with:
           repository: GabrielBaiano/GabrielBaiano
           path: GabrielBaiano
           token: ${{ secrets.PAT_TOKEN }}
+
       - name: Checkout Portfolio Repo
         uses: actions/checkout@v4
         with:
           repository: GabrielBaiano/A-new-type-portifolio
           path: portfolio
           token: ${{ secrets.PAT_TOKEN }}
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      # 2. Run your existing Profile Update script
+
       - name: Run Profile Update Script
         run: |
           cd personal-library
           if [ -f "scripts/update-reading.js" ]; then
             node scripts/update-reading.js
           else
-            echo "Warning: scripts/update-reading.js not found, skipping profile profile update."
+            echo "Warning: scripts/update-reading.js not found, skipping profile update."
           fi
-      # 3. Parse README and Update Portfolio JSON (Serverless Script)
+
       - name: Parse and Update Reviews JSON
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
-            // Paths
+
             const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'personal-library/README.md');
             const targetJsonPath = path.join(process.env.GITHUB_WORKSPACE, 'portfolio/data/reviews.json');
-            // Read README
+
             if (!fs.existsSync(readmePath)) {
                 console.log('README not found');
                 return;
             }
             const content = fs.readFileSync(readmePath, 'utf8');
-            // Regex Updated for your specific HTML Format:
-            // Matches: <img ... width="120"> ... <b>Title</b> ... Status: <b>Status</b>
+
+            // Regex Updated for your specific HTML Format
             const regex = /<td[^>]*>[\s\S]*?<img src="([^"]+)"[^>]*width="120"[\s\S]*?<a[^>]*><b>([^<]+)<\/b><\/a>[\s\S]*?Status: <b>([^<]+)<\/b>/g;
             
             const books = [];
             let match;
             while ((match = regex.exec(content)) !== null) {
-                const rawStatus = match[3]; // e.g., "Reading 📖"
+                const rawStatus = match[3];
                 const cleanStatus = rawStatus.includes('Reading') ? 'Reading' : 'Finished';
+
                 books.push({
                     image: match[1],
                     title: match[2],
                     status: cleanStatus,
                     tag: 'Book',
-                    // Generate ID from title
                     id: match[2].toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-'),
                     link: 'https://github.com/GabrielBaiano/personal-library',
                     date: new Date().toISOString().split('T')[0]
                 });
             }
+
             console.log(`Parsed ${books.length} books.`);
-            // Update reviews field
+
             let currentData = { shelves: [], reviews: [] };
              if (fs.existsSync(targetJsonPath)) {
                 try {
@@ -67,8 +88,9 @@
                 } catch (e) { console.log('Error reading existing JSON, starting fresh'); }
             }
             currentData.reviews = books;
+
             fs.writeFileSync(targetJsonPath, JSON.stringify(currentData, null, 2));
-      # 4. Commit Changes - Portfolio (Only if changed)
+
       - name: Commit Portfolio Updates
         run: |
           cd portfolio
@@ -81,7 +103,7 @@
           else
             echo "No changes to commit in Portfolio"
           fi
-      # 5. Commit Changes - Profile & Library (Existing Flow)
+
       - name: Commit Profile Updates
         run: |
           cd GabrielBaiano
@@ -94,6 +116,7 @@
           else
             echo "No changes to commit in Profile"
           fi
+
       - name: Commit Library Updates
         run: |
           cd personal-library
