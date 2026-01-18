@@ -110,7 +110,7 @@
         <br />
         <a href="https://www.google.com.br/books/edition/The_Family/ldPIxgRaEuoC?hl=pt-BR&gbpv=1&dq=the+family+book+mario+puzo&pg=PT1&printsec=frontcover"><b>Os Bórgias</b></a> <sup>BR</sup>
         <br />
-        Status: <b>Reading 📖</b>
+        Status: <b>Reading 📖 </b>
       </td>
       <td align="center">
         <a href="https://www.google.com.br/books/edition/Entendendo_Algoritmos/HWewDgAAQBAJ?hl=pt-BR&gbpv=1&dq=algoritmo+livro&printsec=frontcover">
